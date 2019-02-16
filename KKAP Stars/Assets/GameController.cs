@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public static bool isPaused = false;
-    public GameObject pauseMenu;
+    //public GameObject pauseMenu;
     public GameObject gameOver;
 
     void Start()
     {
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
         gameOver.SetActive(false);
     }
 
@@ -48,12 +48,12 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    void PauseGame()
-    {
-        pauseMenu.SetActive(true);
-        isPaused = true;
-        Time.timeScale = 0f;
-    }
+    //void PauseGame()
+    //{
+    //    pauseMenu.SetActive(true);
+    //    isPaused = true;
+    //    Time.timeScale = 0f;
+    //}
 
     public void GameOver()
     {
