@@ -2,10 +2,10 @@
 {
     private string name;
     private string company;
-    private double singing;
-    private double rapping;
-    private double dancing;
-    private double likability;
+    private int singing;
+    private int rapping;
+    private int dancing;
+    private int likability;
     private double starPower;
 
     public Contestant(string newName, string newCompany, double newSinging, double newRapping, double newDancing,
@@ -40,42 +40,42 @@
         return company;
     }
 
-    public void setSinging(double newSinging)
+    public void setSinging(int newSinging)
     {
         singing = newSinging;
     }
 
-    public double getSinging()
+    public int getSinging()
     {
         return singing;
     }
 
-    public void setRapping(double newRapping)
+    public void setRapping(int newRapping)
     {
         rapping = newRapping;
     }
 
-    public double getRapping()
+    public int getRapping()
     {
         return rapping;
     }
 
-    public void setDancing(double newDancing)
+    public void setDancing(int newDancing)
     {
         dancing = newDancing;
     }
 
-    public double getDancing()
+    public int getDancing()
     {
         return dancing;
     }
 
-    public void setLikability(double newLikability)
+    public void setLikability(int newLikability)
     {
         likability = newLikability;
     }
 
-    public double getLikability()
+    public int getLikability()
     {
         return likability;
     }
