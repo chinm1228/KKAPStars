@@ -10,7 +10,7 @@ public class ContestantDatabase
     private string[] lastNames = System.IO.File.ReadAllLines(@"Assets\Names\lastNames.txt");
     private string[] companies = System.IO.File.ReadAllLines(@"Assets\Names\companies.txt");
 
-    public void CreateDatabase()
+    public void ContestantDatabase()
     {
         int statsCap = 31;
 
