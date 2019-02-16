@@ -17,17 +17,17 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    if (isPaused)
+        //    {
+        //        ResumeGame();
+        //    }
+        //    else
+        //    {
+        //        PauseGame();
+        //    }
+        //}
     }
 
     public void PlayGame()
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
 
     public void ResumeGame()
     {
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1f;
     }
