@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// The player is the last contestant in the array, i.e. contestants[49].
 public class ContestantDatabase
 {
     private Contestant[] contestants = new Contestant[50];
