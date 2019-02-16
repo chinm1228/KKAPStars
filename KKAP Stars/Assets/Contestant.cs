@@ -8,8 +8,8 @@
     private int likability;
     private double starPower;
 
-    public Contestant(string newName, string newCompany, double newSinging, double newRapping, double newDancing,
-        double newLikability, double newStarPower)
+    public Contestant(string newName, string newCompany, int newSinging, int newRapping, int newDancing,
+        int newLikability, double newStarPower)
     {
         name = newName;
         company = newCompany;
