@@ -58,13 +58,13 @@ public class ContestantDatabase
         remaining[index] = index;
     }
 
-    public Contestant[] GetRemainingContestants()
+    public Dictionary<Contestant, int> GetRemainingContestants()
     {
-        Contestant[] remainingContestants = new Contestant[remaining.Length];
-        for (int i = 0; i < remaining.Length; ++i)
+        Dictionary<Contestant, int> remainingContestants = new Dictionary<Contestant, int>();
+        foreach (int i in remaining)
         {
-            int index = remaining[i];
-            remainingContestants[i] = contestants[index];
+            //int index = remaining[];
+            remainingContestants[contestants[i]] = i;
         }
         return remainingContestants;
     }

@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
 
 	public GameObject startText;
 
+	public GameObject continueText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,12 +66,12 @@ public class GameManager : MonoBehaviour
         notesHit = 0;
         notesMiss = 0;
         statsScreen.SetActive(false);
+        continueText.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-    	Debug.Log(DatabaseManager.database.getMainPlayer().GetSinging());
         if(!startPlaying && !gameEnd){
         	if(Input.GetKeyDown(KeyCode.Space)){
         		startText.SetActive(false);
@@ -111,6 +113,7 @@ public class GameManager : MonoBehaviour
         		singingText.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + singingAbility.ToString());
         		dancingText.GetComponent<TextMeshProUGUI>().SetText("Dancing Ability: " + dancingAbility.ToString());
         		rappingText.GetComponent<TextMeshProUGUI>().SetText("Rapping Ability: " + rappingAbility.ToString());
+        		continueText.SetActive(true);
         		
         	}	
         }
