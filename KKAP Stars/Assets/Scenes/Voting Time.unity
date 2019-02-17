@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: 0, y: -23.649994}
+  m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &94760785
 MonoBehaviour:
@@ -169,7 +169,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Episode One: Evaluation'
+  m_text: 'Episode Four: The Finale!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c584cacb5df546599b970d8268c543b, type: 2}
   m_sharedMaterial: {fileID: 21070668065518860, guid: 2c584cacb5df546599b970d8268c543b,
@@ -239,10 +239,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 94760785}
-    characterCount: 23
+    characterCount: 25
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1433,12 +1433,11 @@ MonoBehaviour:
   dialogue:
     name: Host
     sentences:
-    - For the first episode of KKAPStars, trainees will be evaluated through an audition
-      of their primary skills!
-    - You're up next! Our panel of judges will be scoring you on a range of skills,
-      so be sure to do your best!
-    - 'Instructions: Take the following quiz to determine your talent stats going
-      into the show! Hopefully you''ll make it past the first round of eliminations!'
+    - We have reached the end of KKAPStars! Thank you to all the trainees who have
+      worked so hard to get to this point, and thank you to all who have participated!
+    - Hang tight for the reveal of the final lineup of our newest boy group! Votes
+      are currently being calculated!
+    - '...'
 --- !u!1 &2065488125
 GameObject:
   m_ObjectHideFlags: 0
