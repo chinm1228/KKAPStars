@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Introduction.unity
     guid: 9ceada0b3c1f74d7f8f5cbb0968ff9db
   - enabled: 1
-    path: Assets/Scenes/Evaluation Instructions.unity
-    guid: 9605151b06fb849198b8089afa759af9
-  - enabled: 1
     path: Assets/Scenes/CreateMainPlayer Scene.unity
     guid: daf2af185d308c745a2cdf1502de6f4a
+  - enabled: 1
+    path: Assets/Scenes/Evaluation Instructions.unity
+    guid: 9605151b06fb849198b8089afa759af9
   - enabled: 1
     path: Assets/Scenes/EvalScene-1.unity
     guid: 408758a5188ccef4089a8f0f1153044f
@@ -36,12 +36,24 @@ EditorBuildSettings:
     path: Assets/Scenes/StatsScene.unity
     guid: a046d37a0f9b28842b6b2d873a98d94c
   - enabled: 1
+    path: Assets/Scenes/Cover Instructions.unity
+    guid: b58b37f0fa7d046af83964d0aa36536c
+  - enabled: 1
     path: Assets/Scenes/Rhythm Game Scene.unity
     guid: 68ed281ce4b5f8842b7d4de5bcde1585
+  - enabled: 1
+    path: Assets/Scenes/Produce Instructions.unity
+    guid: 38bf33e9eb2de43a887e55c8b1a2bc5d
   - enabled: 1
     path: Assets/Scenes/AssignMembersScene.unity
     guid: fe31d9206733e3a4494a4151bdae8aef
   - enabled: 1
     path: Assets/Scenes/PostPerfRankings.unity
     guid: aab71cfa17d6cb74cb2a98476138fc2f
+  - enabled: 1
+    path: Assets/Scenes/Voting Time.unity
+    guid: 83a4d4dc019cb47ecbf809099160c507
+  - enabled: 1
+    path: Assets/Scenes/Final9.unity
+    guid: 8f8a22f26a274c141bdcfb73d7d5c41c
   m_configObjects: {}

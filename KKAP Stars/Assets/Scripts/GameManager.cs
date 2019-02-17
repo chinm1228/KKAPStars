@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -105,15 +106,15 @@ public class GameManager : MonoBehaviour
         		results.SetActive(false);
         		if(notesHit > notesMiss){
         			statIncreaseNumber = 50;
-        		}
+                    statsScreen.SetActive(true);
+                    statIncreaseText.GetComponent<TextMeshProUGUI>().SetText("Stat Points Awarded: " + statIncreaseNumber.ToString());
+                    singingText.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + singingAbility.ToString());
+                    dancingText.GetComponent<TextMeshProUGUI>().SetText("Dancing Ability: " + dancingAbility.ToString());
+                    rappingText.GetComponent<TextMeshProUGUI>().SetText("Rapping Ability: " + rappingAbility.ToString());
+                }
         		else{
-        			Debug.Log("Game Over");
-        		}
-        		statsScreen.SetActive(true);
-        		statIncreaseText.GetComponent<TextMeshProUGUI>().SetText("Stat Points Awarded: " + statIncreaseNumber.ToString());
-        		singingText.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + singingAbility.ToString());
-        		dancingText.GetComponent<TextMeshProUGUI>().SetText("Dancing Ability: " + dancingAbility.ToString());
-        		rappingText.GetComponent<TextMeshProUGUI>().SetText("Rapping Ability: " + rappingAbility.ToString());
+                    SceneManager.LoadScene(0);
+                }
         	}	
         }
         
