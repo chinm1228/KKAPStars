@@ -16,4 +16,9 @@ public class VoterDatabase
             voters[i] = new Voter(singingWeight, rappingWeight, dancingWeight);
         }
     }
+
+    public Voter[] GetVoters()
+    {
+        return voters;
+    }
 }
