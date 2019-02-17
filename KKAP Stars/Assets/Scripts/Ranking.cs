@@ -4,9 +4,9 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-public class Ranking : MonoBehaviour
+public class Ranking 
 {
-    private Dictionary<Contestant, string> roles = new Dictionary<Contestant, string>();
+    public Dictionary<Contestant, string> roles = RoleAssignment.GetRoles();
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Ranking : MonoBehaviour
         
     }
     
-    private Dictionary<Contestant, int> GetResults()
+    public Dictionary<Contestant, int> GetResults()
     {
         Dictionary<Contestant, int> results = new Dictionary<Contestant, int>();
         foreach (KeyValuePair<Contestant, string> pair in roles)
@@ -90,7 +90,7 @@ public class Ranking : MonoBehaviour
         return results;
     }
 
-    private Dictionary<Contestant, int> DecideRanks(Dictionary<Contestant, int> results)
+    public Dictionary<Contestant, int> DecideRanks(Dictionary<Contestant, int> results)
     {
         Dictionary<Contestant, int> ranks = new Dictionary<Contestant, int>();
         

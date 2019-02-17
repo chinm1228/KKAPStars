@@ -47,7 +47,13 @@ public class RoleAssignment : MonoBehaviour
 
     public int maxDancers = 3;
 
-    private Dictionary<Contestant, string> rolesAssigned;
+    public static Dictionary<Contestant, string> rolesAssigned;
+
+    public Dictionary<Contestant, int> remainingContestants;
+
+    private Dictionary<GameObject, Contestant> memberReferences;
+
+    public static GameObject[] memberProfiles;
     
     public void HighlightButtons(GameObject member)
     {
@@ -66,6 +72,8 @@ public class RoleAssignment : MonoBehaviour
     		singerCount += 1;
     		oneRole.SetActive(true);
     		HighlightButtons(memberOne);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = oneRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Rapper" && rapperCount < maxRappers){
@@ -73,6 +81,8 @@ public class RoleAssignment : MonoBehaviour
     		rapperCount += 1;
     		oneRole.SetActive(true);
     		HighlightButtons(memberOne);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = oneRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Dancer" && dancerCount < maxDancers){
@@ -80,6 +90,8 @@ public class RoleAssignment : MonoBehaviour
     		dancerCount += 1;
     		oneRole.SetActive(true);
     		HighlightButtons(memberOne);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = oneRole.GetComponent<TextMeshProUGUI>().text;
     	}
     	
     }
@@ -90,6 +102,8 @@ public class RoleAssignment : MonoBehaviour
     		singerCount += 1;
     		twoRole.SetActive(true);
     		HighlightButtons(memberTwo);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = twoRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Rapper" && rapperCount < maxRappers){
@@ -97,6 +111,8 @@ public class RoleAssignment : MonoBehaviour
     		rapperCount += 1;
     		twoRole.SetActive(true);
     		HighlightButtons(memberTwo);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = twoRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Dancer" && dancerCount < maxDancers){
@@ -104,6 +120,8 @@ public class RoleAssignment : MonoBehaviour
     		dancerCount += 1;
     		twoRole.SetActive(true);
     		HighlightButtons(memberTwo);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = twoRole.GetComponent<TextMeshProUGUI>().text;
     	}
     	
     }
@@ -114,6 +132,8 @@ public class RoleAssignment : MonoBehaviour
     		singerCount += 1;
     		threeRole.SetActive(true);
     		HighlightButtons(memberThree);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = threeRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Rapper" && rapperCount < maxRappers){
@@ -121,6 +141,8 @@ public class RoleAssignment : MonoBehaviour
     		rapperCount += 1;
     		threeRole.SetActive(true);
     		HighlightButtons(memberThree);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = threeRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Dancer" && dancerCount < maxDancers){
@@ -128,6 +150,8 @@ public class RoleAssignment : MonoBehaviour
     		dancerCount += 1;
     		threeRole.SetActive(true);
     		HighlightButtons(memberThree);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = threeRole.GetComponent<TextMeshProUGUI>().text;
     	}
     	
     }
@@ -138,6 +162,8 @@ public class RoleAssignment : MonoBehaviour
     		singerCount += 1;
     		fourRole.SetActive(true);
     		HighlightButtons(memberFour);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = fourRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Rapper" && rapperCount < maxRappers){
@@ -145,6 +171,8 @@ public class RoleAssignment : MonoBehaviour
     		rapperCount += 1;
     		fourRole.SetActive(true);
     		HighlightButtons(memberFour);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = fourRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Dancer" && dancerCount < maxDancers){
@@ -152,6 +180,8 @@ public class RoleAssignment : MonoBehaviour
     		dancerCount += 1;
     		fourRole.SetActive(true);
     		HighlightButtons(memberFour);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = fourRole.GetComponent<TextMeshProUGUI>().text;
     	}
     	
     }
@@ -162,6 +192,8 @@ public class RoleAssignment : MonoBehaviour
     		singerCount += 1;
     		fiveRole.SetActive(true);
     		HighlightButtons(memberFive);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = fiveRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Rapper" && rapperCount < maxRappers){
@@ -169,6 +201,8 @@ public class RoleAssignment : MonoBehaviour
     		rapperCount += 1;
     		fiveRole.SetActive(true);
     		HighlightButtons(memberFive);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = fiveRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Dancer" && dancerCount < maxDancers){
@@ -176,6 +210,9 @@ public class RoleAssignment : MonoBehaviour
     		dancerCount += 1;
     		fiveRole.SetActive(true);
     		HighlightButtons(memberFive);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = fiveRole.GetComponent<TextMeshProUGUI>().text;
+
     	}
     	
     }
@@ -186,6 +223,9 @@ public class RoleAssignment : MonoBehaviour
     		singerCount += 1;
     		sixRole.SetActive(true);
     		HighlightButtons(memberSix);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = sixRole.GetComponent<TextMeshProUGUI>().text;
+
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Rapper" && rapperCount < maxRappers){
@@ -193,6 +233,8 @@ public class RoleAssignment : MonoBehaviour
     		rapperCount += 1;
     		sixRole.SetActive(true);
     		HighlightButtons(memberSix);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = sixRole.GetComponent<TextMeshProUGUI>().text;
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Dancer" && dancerCount < maxDancers){
@@ -200,6 +242,8 @@ public class RoleAssignment : MonoBehaviour
     		dancerCount += 1;
     		sixRole.SetActive(true);
     		HighlightButtons(memberSix);
+    		Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[c] = sixRole.GetComponent<TextMeshProUGUI>().text;
     	}
     	
     }
@@ -210,6 +254,9 @@ public class RoleAssignment : MonoBehaviour
     		singerCount += 1;
     		sevenRole.SetActive(true);
     		HighlightButtons(memberPlayer);
+    		//Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[DatabaseManager.database.getMainPlayer()] = sevenRole.GetComponent<TextMeshProUGUI>().text;
+    		DatabaseManager.database.getMainPlayer().SetSinging(DatabaseManager.database.getMainPlayer().GetSinging() + 30);
     	}
 
        	if(TM.GetComponent<TextMeshProUGUI>().text == "Rapper" && rapperCount < maxRappers){
@@ -217,25 +264,67 @@ public class RoleAssignment : MonoBehaviour
     		rapperCount += 1;
     		sevenRole.SetActive(true);
     		HighlightButtons(memberPlayer);
+    		//Contestant c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[DatabaseManager.database.getMainPlayer()] = sevenRole.GetComponent<TextMeshProUGUI>().text;
+    		DatabaseManager.database.getMainPlayer().SetRapping(DatabaseManager.database.getMainPlayer().GetRapping() + 30);
     	}
 
-       	if(TM.GetComponent<TextMeshProUGUI>().text == "Dancer"&& dancerCount < maxDancers){
+       	if(TM.GetComponent<TextMeshProUGUI>().text == "Dancer" && dancerCount < maxDancers){
     		sevenRole.GetComponent<TextMeshProUGUI>().SetText("Dancer");
     		dancerCount += 1;
     		sevenRole.SetActive(true);
     		HighlightButtons(memberPlayer);
+    		// c = memberReferences[TM.transform.parent.parent.gameObject];
+    		rolesAssigned[DatabaseManager.database.getMainPlayer()] = sevenRole.GetComponent<TextMeshProUGUI>().text;
+    		DatabaseManager.database.getMainPlayer().SetDancing(DatabaseManager.database.getMainPlayer().GetDancing() + 30);
     	}
     	
     }
 
+
     void Start()
     {
-        
+
+    	DatabaseManager.database.Increment();
+    	rolesAssigned = new Dictionary<Contestant, string>();
+    	memberProfiles = new GameObject[] {memberOne, memberTwo, memberThree, memberFour, memberFive, memberSix};
+    	memberReferences = new Dictionary<GameObject, Contestant>();
+    	remainingContestants = DatabaseManager.database.GetRemainingContestants();
+
+    	
+    	int i = 0;
+
+    	foreach(KeyValuePair<Contestant, int> pair in remainingContestants) {
+    		if(i == 6){
+    			break;
+    		}
+    		memberReferences[memberProfiles[i]] = pair.Key;
+    		GetFromDatabase(memberProfiles[i], pair);
+    		i++;
+
+    	}
+    	GetFromDatabasePlayer(memberPlayer);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
+    }
+
+    public void GetFromDatabasePlayer(GameObject member){
+    	TextMeshProUGUI[] textToEdit = member.GetComponentsInChildren<TextMeshProUGUI>();
+    	textToEdit[0].SetText("Singing:  " + DatabaseManager.database.getMainPlayer().GetSinging().ToString() + "| Dancing:  " + DatabaseManager.database.getMainPlayer().GetDancing().ToString() + "| Rapping:  " +  DatabaseManager.database.getMainPlayer().GetRapping().ToString());
+    	textToEdit[4].SetText(DatabaseManager.database.getMainPlayer().GetName());
+    }
+
+    public void GetFromDatabase(GameObject member, KeyValuePair<Contestant, int> pair){
+    	TextMeshProUGUI[] textToEdit = member.GetComponentsInChildren<TextMeshProUGUI>();
+    	textToEdit[0].SetText("Singing:  " + pair.Key.GetSinging().ToString() + "| Dancing:  " + pair.Key.GetDancing().ToString() + "| Rapping:  " +  pair.Key.GetRapping().ToString());
+    	textToEdit[4].SetText(pair.Key.GetName());
+    }
+
+    public static Dictionary<Contestant, string> GetRoles(){
+    	return rolesAssigned;
     }
 }

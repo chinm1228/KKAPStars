@@ -37,20 +37,20 @@ public class SetFinal9 : MonoBehaviour
     private void DetermineFinalists()
     {
         //Contestant[] remaining = DatabaseManager.database.GetRemainingContestants();
-        Contestant[] remaining = cdb.GetRemainingContestants();
+        Dictionary<Contestant, int> remaining = cdb.GetRemainingContestants();
         Voter[] voters = vdb.GetVoters();
         Dictionary<Contestant, int> currentResults = new Dictionary<Contestant, int>();
 
-        for (int c = 0; c < remaining.Length-1; ++c)
+        foreach (KeyValuePair<Contestant, int> pair in remaining)
         {
             int total = 0;
             foreach (Voter v in voters)
             {
-                total += remaining[c].GetSinging() * v.GetSingingWeight()
-                    + remaining[c].GetRapping() * v.GetRappingWeight()
-                    + remaining[c].GetDancing() * v.GetDancingWeight();
+                total += pair.Key.GetSinging() * v.GetSingingWeight()
+                    + pair.Key.GetRapping() * v.GetRappingWeight()
+                    + pair.Key.GetDancing() * v.GetDancingWeight();
             }
-            currentResults.Add(remaining[c], total);
+            currentResults.Add(pair.Key, total);
         }
 
         var items = from pair in currentResults

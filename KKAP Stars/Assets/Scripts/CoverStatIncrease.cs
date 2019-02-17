@@ -42,7 +42,7 @@ public class CoverStatIncrease : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    	   
     }
 
     public void singingChosen(){
