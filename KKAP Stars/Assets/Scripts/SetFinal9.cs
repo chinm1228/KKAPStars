@@ -104,6 +104,6 @@ public class SetFinal9 : MonoBehaviour
 
     void EndDialogue()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(0);
     }
 }
