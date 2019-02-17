@@ -25,7 +25,7 @@ public class CalculatingPerfStats : MonoBehaviour
     	foreach(KeyValuePair<Contestant,int> entry in contestantPoints){
 
     		Debug.Log(entry.Key.GetName());
-    		rankingString += entry.Key.GetName() + " placed " + entry.Value.ToString() + "\n";
+    		rankingString += entry.Value.ToString() + ". " + entry.Key.GetName() + "\n";
     		Debug.Log(entry.Value.ToString());
     	} 
     	contestantRanking.text = rankingString;
