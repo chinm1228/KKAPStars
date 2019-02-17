@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SetFinal9 : MonoBehaviour
 {
+    private Contestant[] finalists = new Contestant[9];
+    private ContestantDatabase cdb = new ContestantDatabase();
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,9 @@ public class SetFinal9 : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private DetermineFinalists()
+    { 
     }
 }

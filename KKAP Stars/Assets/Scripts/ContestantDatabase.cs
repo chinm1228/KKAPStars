@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class ContestantDatabase
 {
     private Contestant[] contestants = new Contestant[50];
-    private HashSet<int> remaining = new HashSet<int>();
+    private int[] remaining = new int[50];
     private string[] firstNames = System.IO.File.ReadAllLines(@"Assets\Names\firstNames.txt");
     private string[] lastNames = System.IO.File.ReadAllLines(@"Assets\Names\lastNames.txt");
     private string[] companies = System.IO.File.ReadAllLines(@"Assets\Names\companies.txt");
@@ -27,11 +27,7 @@ public class ContestantDatabase
             double starPower = r.NextDouble() * (statsCap - 0) + 0;
             contestants[i] = new Contestant(name, company, singing, rapping, dancing,
                 likability, starPower);
-        }
-
-        for (int i = 0; i < 49; ++i)
-        {
-            remaining.Add(i);
+            remaining[i] = i;
         }
     }
 
@@ -49,13 +45,19 @@ public class ContestantDatabase
         return companies[companyIndex];
     }
 
-    public Contestant[] GetContestants()
+    public Contestant[] GetRemainingContestants()
     {
-        return contestants;
+        Contestant[] remainingContestants = new Contestant[remaining.Length];
+        for (int i = 0; i < remaining.Length; ++i)
+        {
+            index = remaining[i];
+            remainingContestants[i] = contestants[index];
+        }
+        return remainingContestants;
     }
 
-    public HashSet<int> GetRemaining()
+    public void SetRemaining(int[] newRemaining)
     {
-        return remaining;
+        newRemaining.CopyTo(remaining, 0);
     }
 }
