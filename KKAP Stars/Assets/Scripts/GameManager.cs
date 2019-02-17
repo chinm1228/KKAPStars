@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -91,8 +92,8 @@ public class GameManager : MonoBehaviour
         		theBS.hasStarted = false;
         		notesMiss -= notesHit;
         		results.SetActive(true);
-        		hitsNum.GetComponent<TextMeshProUGUI>().SetText(notesHit.ToString());
-        		missNum.GetComponent<TextMeshProUGUI>().SetText(notesMiss.ToString());
+        		hitsNum.GetComponent<TextMeshProUGUI>().SetText("Hit: " + notesHit.ToString());
+        		missNum.GetComponent<TextMeshProUGUI>().SetText("Miss: " + notesMiss.ToString());
         		gameEnd = true;
         	}
         }
@@ -111,7 +112,6 @@ public class GameManager : MonoBehaviour
         		singingText.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + singingAbility.ToString());
         		dancingText.GetComponent<TextMeshProUGUI>().SetText("Dancing Ability: " + dancingAbility.ToString());
         		rappingText.GetComponent<TextMeshProUGUI>().SetText("Rapping Ability: " + rappingAbility.ToString());
-        		
         	}	
         }
         

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Music
+  - Activator
   layers:
   - Default
   - TransparentFX
@@ -39,9 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Sprite
-    uniqueID: 238174941
+  - name: BG
+    uniqueID: 2979484045
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sprite
+    uniqueID: 238174941
     locked: 0
