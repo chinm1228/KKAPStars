@@ -10,7 +10,6 @@ public class CreateMC : MonoBehaviour
     public Contestant player;
     public Button submit;
     public InputField characterName;
-    private ContestantDatabase cdb = new ContestantDatabase();
     private string[] companies = System.IO.File.ReadAllLines(@"Assets\Names\companies.txt");
 
     void Start()
@@ -30,8 +29,7 @@ public class CreateMC : MonoBehaviour
         string name = characterName.GetComponent<InputField>().text;
         string company = GenerateCompany(companies);
         player = new Contestant(name, company, 0, 0, 0, 0);
-        cdb.SetContestants(49, player);
-       
+        DatabaseManager.database.SetContestants(49, player);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
 
