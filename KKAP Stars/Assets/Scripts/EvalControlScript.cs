@@ -65,10 +65,13 @@ public class EvalControlScript : MonoBehaviour
         int singingStat = DatabaseManager.database.getMainPlayer().GetSinging();
         int dancingStat = DatabaseManager.database.getMainPlayer().GetDancing();
         int rappingStat = DatabaseManager.database.getMainPlayer().GetRapping();
+        double starPower = DatabaseManager.database.getMainPlayer().GetStarPower();
 
         DatabaseManager.database.getMainPlayer().SetSinging(singingStat + 7);
         DatabaseManager.database.getMainPlayer().SetDancing(dancingStat + 7);
         DatabaseManager.database.getMainPlayer().SetRapping(rappingStat + 7);
+
+        DatabaseManager.database.getMainPlayer().SetStarPower(starPower + 7);
 
         Debug.Log("player singing, dancing, stats, and likability increase");
     }
