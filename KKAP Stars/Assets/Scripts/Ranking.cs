@@ -103,6 +103,7 @@ public class Ranking
         foreach (KeyValuePair<Contestant, int> pair in items)
         {
             ranks[pair.Key] = i + 1;
+            ++i;
         }
         return ranks;
     }
