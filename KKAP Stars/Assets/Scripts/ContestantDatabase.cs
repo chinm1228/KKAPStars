@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // The player is the last contestant in the array, i.e. contestants[49].
 public class ContestantDatabase
 {
-    private Contestant[] contestants = new Contestant[50];
+    public Contestant[] contestants = new Contestant[50];
     private int[] remaining = new int[50];
     private string[] firstNames = System.IO.File.ReadAllLines(@"Assets\Names\firstNames.txt");
     private string[] lastNames = System.IO.File.ReadAllLines(@"Assets\Names\lastNames.txt");
@@ -58,13 +58,13 @@ public class ContestantDatabase
         remaining[index] = index;
     }
 
-    public Contestant[] GetRemainingContestants()
+    public Dictionary<Contestant, int> GetRemainingContestants()
     {
-        Contestant[] remainingContestants = new Contestant[remaining.Length];
-        for (int i = 0; i < remaining.Length; ++i)
+        Dictionary<Contestant, int> remainingContestants = new Dictionary<Contestant, int>();
+        foreach (int i in remaining)
         {
-            int index = remaining[i];
-            remainingContestants[i] = contestants[index];
+            //int index = remaining[];
+            remainingContestants[contestants[i]] = i;
         }
         return remainingContestants;
     }
@@ -72,6 +72,14 @@ public class ContestantDatabase
     public Contestant getMainPlayer()
     {
         return contestants[49];
+    }
+
+    public void Increment(){
+        for(int i = 0; i < 49; i++){
+            contestants[i].SetSinging(contestants[i].GetSinging() + 20);
+            contestants[i].SetRapping(contestants[i].GetRapping() + 20);
+            contestants[i].SetDancing(contestants[i].GetDancing() + 20);
+        }
     }
 
     public void SetRemaining(int[] newRemaining)
