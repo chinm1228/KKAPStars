@@ -23,9 +23,9 @@ public class Ranking : MonoBehaviour
     private Dictionary<Contestant, int> GetResults()
     {
         Dictionary<Contestant, int> results = new Dictionary<Contestant, int>();
-        foreach (KeyValuePair<Contestant, string> pair in roles.GetEnumerator())
+        foreach (KeyValuePair<Contestant, string> pair in roles)
         {
-            int total = 0;
+            double total = 0.0;
             int singing = pair.Key.GetSinging();
             int dancing = pair.Key.GetDancing();
             int rapping = pair.Key.GetRapping();
@@ -85,7 +85,7 @@ public class Ranking : MonoBehaviour
                     total += singing;
                 }
             }
-            results[pair.Key] = total;
+            results[pair.Key] = (int) total;
         }
         return results;
     }
