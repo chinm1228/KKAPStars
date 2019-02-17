@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AssignMembersScene.unity
     guid: fe31d9206733e3a4494a4151bdae8aef
+  - enabled: 1
+    path: Assets/Scenes/PostPerfRankings.unity
+    guid: aab71cfa17d6cb74cb2a98476138fc2f
   m_configObjects: {}
