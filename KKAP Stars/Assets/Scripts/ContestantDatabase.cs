@@ -23,10 +23,8 @@ public class ContestantDatabase
             int singing = r.Next(0, statsCap);
             int rapping = r.Next(0, statsCap);
             int dancing = r.Next(0, statsCap);
-            int likability = r.Next(0, statsCap);
             double starPower = r.NextDouble() * (statsCap - 0) + 0;
-            contestants[i] = new Contestant(name, company, singing, rapping, dancing,
-                likability, starPower);
+            contestants[i] = new Contestant(name, company, singing, rapping, dancing, starPower);
             remaining[i] = i;
         }
     }
@@ -52,6 +50,12 @@ public class ContestantDatabase
         System.Random r = new System.Random(seed);
         int companyIndex = r.Next(0, companies.Length);
         return companies[companyIndex];
+    }
+
+    public void SetContestants(int index, Contestant contestant)
+    {
+        contestants[index] = contestant;
+        remaining[index] = index;
     }
 
     public Contestant[] GetRemainingContestants()

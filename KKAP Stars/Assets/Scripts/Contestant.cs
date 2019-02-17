@@ -1,22 +1,22 @@
-﻿public class Contestant
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+public class Contestant
 {
     private string name;
     private string company;
     private int singing;
     private int rapping;
     private int dancing;
-    private int likability;
     private double starPower;
 
-    public Contestant(string newName, string newCompany, int newSinging, int newRapping, int newDancing,
-        int newLikability, double newStarPower)
+    public Contestant(string newName, string newCompany, int newSinging, int newRapping, int newDancing, double newStarPower)
     {
         name = newName;
         company = newCompany;
         singing = newSinging;
         rapping = newRapping;
         dancing = newDancing;
-        likability = newLikability;
         starPower = newStarPower;
     }
 
@@ -68,16 +68,6 @@
     public int GetDancing()
     {
         return dancing;
-    }
-
-    public void SetLikability(int newLikability)
-    {
-        likability = newLikability;
-    }
-
-    public int GetLikability()
-    {
-        return likability;
     }
 
     public void SetStarPower(double newStarPower)
