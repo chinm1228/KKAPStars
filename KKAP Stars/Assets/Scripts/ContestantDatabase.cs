@@ -76,9 +76,9 @@ public class ContestantDatabase
 
     public void Increment(){
         for(int i = 0; i < 49; i++){
-            contestants[i].SetSinging(contestants[i].GetSinging() + 20);
-            contestants[i].SetRapping(contestants[i].GetRapping() + 20);
-            contestants[i].SetDancing(contestants[i].GetDancing() + 20);
+            contestants[i].SetSinging(contestants[i].GetSinging() + 50);
+            contestants[i].SetRapping(contestants[i].GetRapping() + 50);
+            contestants[i].SetDancing(contestants[i].GetDancing() + 50);
         }
     }
 
