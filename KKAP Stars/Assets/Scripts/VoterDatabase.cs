@@ -10,9 +10,9 @@ public class VoterDatabase
 
         for (int i = 0; i < 100; ++i)
         {
-            int singingWeight = r.Next(26, 40);
-            int rappingWeight = r.Next(26, 40);
-            int dancingWeight = 100 - (singingWeight + rappingWeight);
+            int singingWeight = r.Next(0, 6);
+            int rappingWeight = r.Next(0, 6);
+            int dancingWeight = r.Next(0, 6);
             voters[i] = new Voter(singingWeight, rappingWeight, dancingWeight);
         }
     }
