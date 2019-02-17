@@ -70,7 +70,6 @@ public class CoverStatIncrease : MonoBehaviour
     		secondPick = true;
     		int val = Mathf.RoundToInt(statNum + statAllocationPoints * .5f);
     		statAllocationPoints -= statAllocationPoints * .5f;  
-    		Debug.Log(statAllocationPoints);
     		return val;
     	}
     	if(secondPick){
@@ -78,14 +77,12 @@ public class CoverStatIncrease : MonoBehaviour
     		thirdPick = true;
     		int val = Mathf.RoundToInt(statNum + statAllocationPoints * .65f);
     		statAllocationPoints -= statAllocationPoints * .65f;
-    		Debug.Log(statAllocationPoints);
     		return val;
     	}
     	else{
     		thirdPick = false;
     		int val = Mathf.RoundToInt(statNum + statAllocationPoints);
     		statAllocationPoints -= statAllocationPoints;
-    		Debug.Log(statAllocationPoints);
     		return val;
     	}
     }
