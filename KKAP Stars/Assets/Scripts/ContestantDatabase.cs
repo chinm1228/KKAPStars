@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class ContestantDatabase
 {
     private Contestant[] contestants = new Contestant[50];
+    private int[] remaining = new int[50];
     private string[] firstNames = System.IO.File.ReadAllLines(@"Assets\Names\firstNames.txt");
     private string[] lastNames = System.IO.File.ReadAllLines(@"Assets\Names\lastNames.txt");
     private string[] companies = System.IO.File.ReadAllLines(@"Assets\Names\companies.txt");
@@ -16,9 +17,9 @@ public class ContestantDatabase
 
         for (int i = 0; i < 49; ++i)
         {
-            string name = generateName(firstNames, lastNames);
-            string company = generateCompany(companies);
-            System.Random r = new System.Random(DateTime.Now.Millisecond);
+            string name = GenerateName(firstNames, lastNames, i);
+            string company = GenerateCompany(companies, i);
+            System.Random r = new System.Random(DateTime.Now.Millisecond + i);
             int singing = r.Next(0, statsCap);
             int rapping = r.Next(0, statsCap);
             int dancing = r.Next(0, statsCap);
@@ -26,20 +27,46 @@ public class ContestantDatabase
             double starPower = r.NextDouble() * (statsCap - 0) + 0;
             contestants[i] = new Contestant(name, company, singing, rapping, dancing,
                 likability, starPower);
+            remaining[i] = i;
         }
     }
 
-    private string generateName(string[] firstNames, string[] lastNames) {
-        System.Random r = new System.Random(DateTime.Now.Millisecond);
+    private string GenerateName(string[] firstNames, string[] lastNames, int seed) {
+        if (seed > 10)
+        {
+            seed += 13;
+        } else if (seed > 23) {
+            seed /= 2;
+        } else if (seed > 31)
+        {
+            seed *= 3;
+        }
+        System.Random r = new System.Random(seed);
         int firstNameIndex = r.Next(0, firstNames.Length);
         int lastNameIndex = r.Next(0, lastNames.Length);
         return lastNames[lastNameIndex] + " " + firstNames[firstNameIndex];
     }
 
-    private string generateCompany(string[] companies)
+    private string GenerateCompany(string[] companies, int seed)
     {
-        System.Random r = new System.Random(DateTime.Now.Millisecond);
+        System.Random r = new System.Random(seed);
         int companyIndex = r.Next(0, companies.Length);
         return companies[companyIndex];
+    }
+
+    public Contestant[] GetRemainingContestants()
+    {
+        Contestant[] remainingContestants = new Contestant[remaining.Length];
+        for (int i = 0; i < remaining.Length; ++i)
+        {
+            int index = remaining[i];
+            remainingContestants[i] = contestants[index];
+        }
+        return remainingContestants;
+    }
+
+    public void SetRemaining(int[] newRemaining)
+    {
+        newRemaining.CopyTo(remaining, 0);
     }
 }
