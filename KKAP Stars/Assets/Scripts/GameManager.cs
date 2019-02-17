@@ -44,16 +44,21 @@ public class GameManager : MonoBehaviour
 
 	public int statIncreaseNumber;
 
-	public int singingAbility = DatabaseManager.database.getMainPlayer().getSinging();
+	public int singingAbility;
 
-	public int dancingAbility = DatabaseManager.database.getMainPlayer().getDancing();
+	public int dancingAbility;
 
-	public int rappingAbility = DatabaseManager.database.getMainPlayer().getRapping();
+	public int rappingAbility;
+
+	public GameObject startText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+		singingAbility = DatabaseManager.database.getMainPlayer().GetSinging();
+		dancingAbility = DatabaseManager.database.getMainPlayer().GetDancing(); 
+		rappingAbility = DatabaseManager.database.getMainPlayer().GetRapping();   	
     	results.SetActive(false);
         gameInstance = this;
         notesHit = 0;
@@ -64,9 +69,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	Debug.Log(DatabaseManager.database.getMainPlayer());
+    	Debug.Log(DatabaseManager.database.getMainPlayer().GetSinging());
         if(!startPlaying && !gameEnd){
         	if(Input.GetKeyDown(KeyCode.Space)){
+        		startText.SetActive(false);
         		startPlaying = true;
         		currentRunning = true;
         		theBS.hasStarted = true;

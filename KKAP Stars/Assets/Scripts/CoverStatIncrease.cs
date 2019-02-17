@@ -50,7 +50,7 @@ public class CoverStatIncrease : MonoBehaviour
     	singButton.SetActive(false);
     	int val = increaseStat(theGM.singingAbility);
     	newSinging.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + val.ToString());
-    	DatabaseManager.database.getMainPlayer().setSinging(val);
+    	DatabaseManager.database.getMainPlayer().SetSinging(val);
     }
 
     public void dancingChosen(){
@@ -58,7 +58,7 @@ public class CoverStatIncrease : MonoBehaviour
     	danceButton.SetActive(false);
     	int val = increaseStat(theGM.dancingAbility);
     	newDancing.GetComponent<TextMeshProUGUI>().SetText("Dancing Ability: " + val.ToString());
-    	DatabaseManager.database.getMainPlayer().setDancing(val);
+    	DatabaseManager.database.getMainPlayer().SetDancing(val);
     }
 
     public void rappingChosen(){
@@ -66,7 +66,7 @@ public class CoverStatIncrease : MonoBehaviour
     	rapButton.SetActive(false);
     	int val = increaseStat(theGM.rappingAbility);
     	newRapping.GetComponent<TextMeshProUGUI>().SetText("Rapping Ability: " + val.ToString());
-    	DatabaseManager.database.getMainPlayer().setRapping(val);
+    	DatabaseManager.database.getMainPlayer().SetRapping(val);
     }
 
 
