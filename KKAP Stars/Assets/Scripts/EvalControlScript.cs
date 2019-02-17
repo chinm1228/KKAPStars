@@ -23,28 +23,27 @@ public class EvalControlScript : MonoBehaviour
 
     void TaskOnClick1()
     {
-        //Output this to console when Button1 or Button3 is clicked
         //player.sing stats increases
 
         Debug.Log("player singing stats increase");
+
     }
 
     void TaskOnClick2()
     {
-        //Output this to console when Button1 or Button3 is clicked
-        //player.
+        //player.dance stats increases
         Debug.Log("player dancing stats increase");
     }
 
     void TaskOnClick3()
     {
-        //Output this to console when Button1 or Button3 is clicked
+        //player.rapping stats increase
         Debug.Log("player rapping stats increase");
     }
 
     void TaskOnClick4()
     {
-        //Output this to console when Button1 or Button3 is clicked
+        //all player stats increase + likability
         Debug.Log("player singing, dancing, stats, and likability increase");
     }
 

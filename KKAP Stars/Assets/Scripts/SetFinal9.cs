@@ -18,7 +18,8 @@ public class SetFinal9 : MonoBehaviour
         
     }
 
-    private DetermineFinalists()
-    { 
+    private Contestant[] DetermineFinalists()
+    {
+        return finalists;
     }
 }
