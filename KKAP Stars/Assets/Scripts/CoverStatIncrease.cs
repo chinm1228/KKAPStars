@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CoverStatIncrease : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class CoverStatIncrease : MonoBehaviour
 	public GameObject danceButton;
 
 	public GameObject rapButton;
+
+    public bool choseSing = false;
+
+    public bool choseDance = false;
+
+    public bool choseRap = false;
 
 	public float statAllocationPoints;
 
@@ -42,12 +49,20 @@ public class CoverStatIncrease : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	   
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (theGM.gameEnd && choseSing && choseDance && choseRap)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+
+        }
     }
 
     public void singingChosen(){
     	newSinging.SetActive(true);
     	singButton.SetActive(false);
+        choseSing = true;
     	int val = increaseStat(theGM.singingAbility);
     	newSinging.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + val.ToString());
     	DatabaseManager.database.getMainPlayer().SetSinging(val);
@@ -56,6 +71,7 @@ public class CoverStatIncrease : MonoBehaviour
     public void dancingChosen(){
     	newDancing.SetActive(true);
     	danceButton.SetActive(false);
+        choseDance = true;
     	int val = increaseStat(theGM.dancingAbility);
     	newDancing.GetComponent<TextMeshProUGUI>().SetText("Dancing Ability: " + val.ToString());
     	DatabaseManager.database.getMainPlayer().SetDancing(val);
@@ -64,6 +80,7 @@ public class CoverStatIncrease : MonoBehaviour
     public void rappingChosen(){
     	newRapping.SetActive(true);
     	rapButton.SetActive(false);
+        choseRap = true;
     	int val = increaseStat(theGM.rappingAbility);
     	newRapping.GetComponent<TextMeshProUGUI>().SetText("Rapping Ability: " + val.ToString());
     	DatabaseManager.database.getMainPlayer().SetRapping(val);
