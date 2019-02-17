@@ -21,6 +21,7 @@ public class ButtonController : MonoBehaviour
     {
         if(Input.GetKeyDown(keyToPress)){
         	SR.sprite = pressedSprite;
+        	
         }
 
         if(Input.GetKeyUp(keyToPress)){
