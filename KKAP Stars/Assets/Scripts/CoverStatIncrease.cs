@@ -48,19 +48,25 @@ public class CoverStatIncrease : MonoBehaviour
     public void singingChosen(){
     	newSinging.SetActive(true);
     	singButton.SetActive(false);
-    	newSinging.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + increaseStat(theGM.singingAbility).ToString());
+    	int val = increaseStat(theGM.singingAbility);
+    	newSinging.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + val.ToString());
+    	DatabaseManager.database.getMainPlayer().setSinging(val);
     }
 
     public void dancingChosen(){
     	newDancing.SetActive(true);
     	danceButton.SetActive(false);
-    	newDancing.GetComponent<TextMeshProUGUI>().SetText("Dancing Ability: " + increaseStat(theGM.dancingAbility).ToString());
+    	int val = increaseStat(theGM.dancingAbility);
+    	newDancing.GetComponent<TextMeshProUGUI>().SetText("Dancing Ability: " + val.ToString());
+    	DatabaseManager.database.getMainPlayer().setDancing(val);
     }
 
     public void rappingChosen(){
     	newRapping.SetActive(true);
     	rapButton.SetActive(false);
-    	newRapping.GetComponent<TextMeshProUGUI>().SetText("Rapping Ability: " + increaseStat(theGM.rappingAbility).ToString());
+    	int val = increaseStat(theGM.rappingAbility);
+    	newRapping.GetComponent<TextMeshProUGUI>().SetText("Rapping Ability: " + val.ToString());
+    	DatabaseManager.database.getMainPlayer().setRapping(val);
     }
 
 

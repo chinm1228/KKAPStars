@@ -1371,10 +1371,21 @@ MonoBehaviour:
   memberTwo: {fileID: 372649010}
   twoRole: {fileID: 1525784232}
   memberThree: {fileID: 43954712}
+  threeRole: {fileID: 0}
   memberFour: {fileID: 754495811}
+  fourRole: {fileID: 0}
   memberFive: {fileID: 810530752}
+  fiveRole: {fileID: 0}
   memberSix: {fileID: 476236658}
+  sixRole: {fileID: 0}
   memberPlayer: {fileID: 47767043}
+  sevenRole: {fileID: 0}
+  singerCount: 0
+  maxSingers: 2
+  rapperCount: 0
+  maxRappers: 2
+  dancerCount: 0
+  maxDancers: 3
 --- !u!1 &1379490036 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3789585088200967550, guid: 8baa0dff85daefc4095627f204df4dae,
@@ -2128,7 +2139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2106429333
 RectTransform:
   m_ObjectHideFlags: 0
