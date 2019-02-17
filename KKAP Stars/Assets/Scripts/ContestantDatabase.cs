@@ -69,6 +69,11 @@ public class ContestantDatabase
         return remainingContestants;
     }
 
+    public Contestant getMainPlayer()
+    {
+        return contestants[49];
+    }
+
     public void SetRemaining(int[] newRemaining)
     {
         newRemaining.CopyTo(remaining, 0);
