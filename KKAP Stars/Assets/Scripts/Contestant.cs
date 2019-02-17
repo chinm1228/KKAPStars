@@ -1,91 +1,81 @@
-﻿public class Contestant
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+public class Contestant
 {
     private string name;
     private string company;
     private int singing;
     private int rapping;
     private int dancing;
-    private int likability;
     private double starPower;
 
-    public Contestant(string newName, string newCompany, int newSinging, int newRapping, int newDancing,
-        int newLikability, double newStarPower)
+    public Contestant(string newName, string newCompany, int newSinging, int newRapping, int newDancing, double newStarPower)
     {
         name = newName;
         company = newCompany;
         singing = newSinging;
         rapping = newRapping;
         dancing = newDancing;
-        likability = newLikability;
         starPower = newStarPower;
     }
 
-    public void setName(string newName)
+    public void SetName(string newName)
     {
         name = newName;
     }
 
-    public string getName()
+    public string GetName()
     {
         return name;
     }
 
-    public void setCompany(string newCompany)
+    public void SetCompany(string newCompany)
     {
         company = newCompany;
     }
 
-    public string getCompany()
+    public string GetCompany()
     {
         return company;
     }
 
-    public void setSinging(int newSinging)
+    public void SetSinging(int newSinging)
     {
         singing = newSinging;
     }
 
-    public int getSinging()
+    public int GetSinging()
     {
         return singing;
     }
 
-    public void setRapping(int newRapping)
+    public void SetRapping(int newRapping)
     {
         rapping = newRapping;
     }
 
-    public int getRapping()
+    public int GetRapping()
     {
         return rapping;
     }
 
-    public void setDancing(int newDancing)
+    public void SetDancing(int newDancing)
     {
         dancing = newDancing;
     }
 
-    public int getDancing()
+    public int GetDancing()
     {
         return dancing;
     }
 
-    public void setLikability(int newLikability)
-    {
-        likability = newLikability;
-    }
-
-    public int getLikability()
-    {
-        return likability;
-    }
-
-    public void setStarPower(double newStarPower)
+    public void SetStarPower(double newStarPower)
     {
         starPower = newStarPower;
     }
 
-    public double getStarPower()
+    public double GetStarPower()
     {
         return starPower;
     }
