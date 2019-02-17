@@ -10,6 +10,7 @@ public class CalculatingPerfStats : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI teamPlace, contestantRanking;
     public Ranking rank;
+    
 
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class CalculatingPerfStats : MonoBehaviour
     	int place = calculatePlace();
     	Dictionary<Contestant,int> contestants = rank.GetResults();
     	Debug.Log(contestants.Count);
+        addPointstoDatabase();
     	Dictionary<Contestant,int> contestantPoints = rank.DecideRanks(contestants);
     	teamPlace.text = "Team place: " + place.ToString();
     	string rankingString = "";
@@ -37,6 +39,14 @@ public class CalculatingPerfStats : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    void addPointstoDatabase()
+    {
+        Contestant c = DatabaseManager.database.getMainPlayer();
+        c.SetSinging(c.GetSinging() + 20);
+        c.SetRapping(c.GetRapping() + 20);
+        c.SetDancing(c.GetDancing() + 20);
     }
 
     int totalScore(){

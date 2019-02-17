@@ -7,6 +7,6 @@ public class MenuStart : MonoBehaviour
 {
     public void changemenuscene(string scenename)
     {
-        SceneManager.LoadScene(scenename);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

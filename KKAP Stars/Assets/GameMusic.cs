@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMusic : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class GameMusic : MonoBehaviour
 
     void Awake()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            GameObject music = GameObject.FindGameObjectWithTag("Music");
+            Destroy(music);
+        }
         if (toPlay)
         {
             GameObject.FindGameObjectWithTag("Music").GetComponent<AudioController>().PlayMusic();

@@ -64,6 +64,7 @@ public class SetFinal9 : MonoBehaviour
             if (i < 9)
             {
                 finalists.Enqueue(pair.Key);
+  
             }
             else
             {
