@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Evaluation Instructions.unity
     guid: 9605151b06fb849198b8089afa759af9
   - enabled: 1
+    path: Assets/Scenes/CreateMainPlayer Scene.unity
+    guid: daf2af185d308c745a2cdf1502de6f4a
+  - enabled: 1
     path: Assets/Scenes/EvalScene-1.unity
     guid: 408758a5188ccef4089a8f0f1153044f
   - enabled: 1
@@ -32,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StatsScene.unity
     guid: a046d37a0f9b28842b6b2d873a98d94c
+  - enabled: 1
+    path: Assets/Scenes/Rhythm Game Scene.unity
+    guid: 68ed281ce4b5f8842b7d4de5bcde1585
   m_configObjects: {}

@@ -42,17 +42,23 @@ public class GameManager : MonoBehaviour
 
 	public GameObject statIncreaseText;
 
-	public int statIncreaseNumber = 100;
+	public int statIncreaseNumber;
 
-	public int singingAbility = 70;
+	public int singingAbility;
 
-	public int dancingAbility = 50;
+	public int dancingAbility;
 
-	public int rappingAbility = 30;
+	public int rappingAbility;
+
+	public GameObject startText;
+
 
     // Start is called before the first frame update
     void Start()
     {
+		singingAbility = DatabaseManager.database.getMainPlayer().GetSinging();
+		dancingAbility = DatabaseManager.database.getMainPlayer().GetDancing(); 
+		rappingAbility = DatabaseManager.database.getMainPlayer().GetRapping();   	
     	results.SetActive(false);
         gameInstance = this;
         notesHit = 0;
@@ -63,8 +69,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    	Debug.Log(DatabaseManager.database.getMainPlayer().GetSinging());
         if(!startPlaying && !gameEnd){
         	if(Input.GetKeyDown(KeyCode.Space)){
+        		startText.SetActive(false);
         		startPlaying = true;
         		currentRunning = true;
         		theBS.hasStarted = true;
@@ -92,6 +100,12 @@ public class GameManager : MonoBehaviour
         if(gameEnd){
         	if(Input.GetKeyDown(KeyCode.Space)){
         		results.SetActive(false);
+        		if(notesHit > notesMiss){
+        			statIncreaseNumber = 50;
+        		}
+        		else{
+        			Debug.Log("Game Over");
+        		}
         		statsScreen.SetActive(true);
         		statIncreaseText.GetComponent<TextMeshProUGUI>().SetText("Stat Points Awarded: " + statIncreaseNumber.ToString());
         		singingText.GetComponent<TextMeshProUGUI>().SetText("Singing Ability: " + singingAbility.ToString());
